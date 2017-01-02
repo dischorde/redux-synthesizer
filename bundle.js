@@ -23992,6 +23992,11 @@
 	      return _react2.default.createElement(
 	        'div',
 	        { className: 'app' },
+	        _react2.default.createElement(
+	          'h1',
+	          null,
+	          'Synthesizer'
+	        ),
 	        _react2.default.createElement(_synth_container2.default, null)
 	      );
 	    }
@@ -24063,6 +24068,10 @@
 	
 	var _note2 = _interopRequireDefault(_note);
 	
+	var _note_key = __webpack_require__(228);
+	
+	var _note_key2 = _interopRequireDefault(_note_key);
+	
 	var _jquery = __webpack_require__(227);
 	
 	var _jquery2 = _interopRequireDefault(_jquery);
@@ -24127,23 +24136,17 @@
 	  }, {
 	    key: "render",
 	    value: function render() {
+	      var _this4 = this;
+	
 	      this.playNotes();
-	      var notesList = this.notes.map(function (note, idx) {
-	        return _react2.default.createElement(
-	          "li",
-	          { key: idx },
-	          note.oscillatorNode.frequency.value
-	        );
+	      var noteKeys = _tones.NOTE_NAMES.map(function (note, idx) {
+	        return _react2.default.createElement(_note_key2.default, { key: idx, note: note, pressed: _this4.props.notes.includes(note) });
 	      });
+	
 	      return _react2.default.createElement(
 	        "div",
-	        null,
-	        "Synth",
-	        _react2.default.createElement(
-	          "ul",
-	          null,
-	          notesList
-	        )
+	        { className: "keys" },
+	        noteKeys
 	      );
 	    }
 	  }]);
@@ -34378,6 +34381,34 @@
 	return jQuery;
 	} );
 
+
+/***/ },
+/* 228 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _react = __webpack_require__(1);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	var NoteKey = function NoteKey(_ref) {
+	  var note = _ref.note,
+	      pressed = _ref.pressed;
+	  return _react2.default.createElement(
+	    'div',
+	    { className: pressed ? 'note-key pressed' : 'note-key' },
+	    note
+	  );
+	};
+	
+	exports.default = NoteKey;
 
 /***/ }
 /******/ ]);

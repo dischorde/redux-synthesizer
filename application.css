@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css?family=Pacifico');
+
+body {
+  background: rgb(64, 34, 43);
+  font-family: 'Pacifico', cursive;
+}
+
+h1 {
+  text-align: center;
+  color: white;
+  font-size: 3.5em;
+  font-weight: 300;
+}
+
+.keys {
+  display: flex;
+  justify-content: center;
+}
+
+.note-key {
+  height: 160px;
+  width: 60px;
+  justify-content: center;
+  margin: 1%;
+  border: 1px black solid;
+  border-radius: 10px;
+  background: white;
+  box-shadow: 0 8px 2px black;
+  text-align: center;
+  font-size: large;
+}
+
+.note-key.pressed {
+  background: lightgray;
+  box-shadow: 0 2px 8px black;
+}

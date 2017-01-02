@@ -9,6 +9,7 @@ class App extends React.Component {
   render() {
     return (
       <div className='app'>
+        <h1>Synthesizer</h1>
         <SynthContainer />
       </div>
     );
