@@ -9,7 +9,7 @@ const notesReducer = (state = [], action) => {
 
   switch(action.type) {
     case KEY_PRESSED:
-      if (isValid && state.includes(action.key)) {
+      if (isValid && idx === -1) {
         return [...state, action.key];
       }
       else {
@@ -18,7 +18,8 @@ const notesReducer = (state = [], action) => {
     case KEY_RELEASED:
       if (isValid && idx !== -1) {
         let newState = [...state];
-        return newState.splice(idx, 1);
+        newState.splice(idx, 1);
+        return newState;
       }
       else {
         return state;
